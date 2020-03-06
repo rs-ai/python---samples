@@ -1,0 +1,38 @@
+# You would need to signup to rapidapi.com to  get free developer API keys
+# Many thanks to the instruction on this tutorial to help me get started https://slacker.ro/2020/02/14/how-to-build-an-automated-sales-pipeline-with-crunchbase-api-python/
+
+import requests
+import json
+
+RAPIDAPI_KEY = "YYYY"  
+#please replace with your actual API Key when you sign up to 
+
+url_odm = "https://crunchbase-crunchbase-v1.p.rapidapi.com/odm-organizations"
+
+url_people = "https://crunchbase-crunchbase-v1.p.rapidapi.com/odm-people"
+
+headers = {
+    'x-rapidapi-host': "crunchbase-crunchbase-v1.p.rapidapi.com",
+    'x-rapidapi-key': RAPIDAPI_KEY
+    }
+
+response_odm = requests.request("GET", url_odm, headers=headers)
+response_people = requests.request("GET", url_people, headers=headers)
+
+print(response_odm.text)
+print(response_people.text)
+
+odm = json.loads(response_odm.text)
+
+for org in odm["data"]["items"]:
+    try:
+        org_name = org["properties"]["name"]
+        print(org_name)
+    except Exception as e:
+        print("Exception...stop")
+        
+        
+#You have made a start by connecting to the API and printing response from it. 
+#I will develop this code to have more additional features        
+        
+        
