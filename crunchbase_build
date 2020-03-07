@@ -31,7 +31,7 @@ for org in odm["data"]["items"]:
     except Exception as e:
         print("Exception...stop")
         
-# You can make an interesting observation here, when you run the program. We have no parameters specified here,
+# You can make an interesting observation here, when you run the program. We have no record limits specified here,
 # however after a set of records the loop ends. It's interesting, this is one of the advantage versus say
 # running a SQL query against a data-base that has all these records and you forget to limit the Where clause.
 
