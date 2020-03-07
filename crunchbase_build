@@ -1,6 +1,6 @@
 # You would need to signup to rapidapi.com to  get free developer API keys
 # Many thanks to the instruction on this tutorial to help me get started
-# https://rapidapi.com/blog/crunchbase-api-python-automated-sales-pipeline/
+# https://rapidapi.com/blog/crunchbase-api-python-automated-sales-pipeline
 
 import requests
 import json
